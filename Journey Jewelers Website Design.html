@@ -1,0 +1,553 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Journey Jewelers — Custom Design • Engagement & Bridal • Same-Day Sizing</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Journey Jewelers: bespoke fine jewelry crafted in-house by our Master Jeweler. Custom design, engagement & bridal, heirloom redesign, repairs, and same-day ring sizing. Book a private consultation.">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      /* Journey blues */
+      --brand:#1B3054;      /* deep blue */
+      --brand-acc:#1E4B83;  /* accent / hover */
+      --brand-soft:#A7B9D3; /* subtle lines */
+      /* base */
+      --bg:#FFFFFF; --ink:#16181B; --muted:#5B6168;
+      /* ui */
+      --maxw:1160px; --radius:14px; --shadow:0 10px 30px rgba(0,0,0,.06);
+    }
+    html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.65}
+    *,*::before,*::after{box-sizing:border-box}
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:0 18px}
+    section{padding:64px 0;border-top:1px solid var(--brand-soft)}
+    section:first-of-type{border-top:none}
+    .anchor{scroll-margin-top:90px}
+    h1,h2,h3{font-family:"Playfair Display",Georgia,serif;color:var(--brand);margin:0 0 10px}
+    h1{font-size:2.9rem;line-height:1.15}
+    h2{font-size:1.9rem;line-height:1.2;margin-top:1.4rem}
+    h3{font-size:1.12rem;margin-top:1rem;color:#243244}
+    @media(min-width:780px){h1{font-size:3.2rem}}
+    p,li,input,select,textarea{font-size:1rem}
+    .sub{color:var(--muted)} .small{color:var(--muted);font-size:.92rem}
+    .eyebrow{letter-spacing:.08em;text-transform:uppercase;font-size:.82rem;color:#243244;margin-bottom:6px}
+    .grid-2{display:grid;gap:28px} @media(min-width:780px){.grid-2{grid-template-columns:1fr 1fr}}
+    .grid-3{display:grid;gap:18px} @media(min-width:880px){.grid-3{grid-template-columns:repeat(3,1fr)}}
+    .grid-4{display:grid;gap:16px} @media(min-width:980px){.grid-4{grid-template-columns:repeat(4,1fr)}}
+    .card{background:#fff;border:1px solid var(--brand-soft);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+    .card-body{padding:18px}
+    .pill{display:inline-block;border:1px solid var(--brand-soft);border-radius:999px;padding:6px 10px;background:#fff;font-size:.86rem;color:#1f2c3c}
+    .bullet{display:flex;gap:10px;align-items:flex-start}
+    .bullet:before{content:"✓";color:var(--brand);font-weight:700;margin-top:2px}
+    .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+    .btn{display:inline-block;background:var(--brand);color:#fff;border:2px solid var(--brand);padding:12px 20px;border-radius:999px;font-weight:600;letter-spacing:.02em;font-size:.96rem}
+    .btn:hover{background:var(--brand-acc);border-color:var(--brand-acc);transition:.25s}
+    .ghost{background:#fff;color:var(--brand);border:2px solid var(--brand)}
+    .ghost:hover{background:rgba(27,48,84,.08)}
+    /* header */
+    .topbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid var(--brand-soft)}
+    .nav{display:flex;justify-content:space-between;align-items:center;padding:14px 18px}
+    .brand{font-family:"Playfair Display",serif;font-weight:700;font-size:1.25rem;color:var(--brand)}
+    .links{display:none;gap:18px;align-items:center}
+    .links a{color:#243244;font-weight:500}
+    .links a:hover{color:var(--brand)}
+    .call-btn{display:none}
+    @media(min-width:980px){.links{display:flex}.call-btn{display:inline-block}}
+    /* mobile menu */
+    .burger{display:inline-flex;flex-direction:column;gap:4px;cursor:pointer}
+    .burger span{width:24px;height:2px;background:#243244}
+    @media(min-width:980px){.burger{display:none}}
+    .mobile-menu{display:none;position:fixed;inset:0;background:#fff;z-index:60;padding:20px}
+    .mobile-menu.open{display:block}
+    .mobile-menu a{display:block;padding:14px 6px;border-bottom:1px solid var(--brand-soft);color:#243244}
+    .mobile-menu .close{position:absolute;top:14px;right:18px;font-size:1.6rem;line-height:1;cursor:pointer;color:#243244}
+    /* hero */
+    .hero{padding:0}
+    .hero-visual{position:relative;min-height:66vh;display:flex;align-items:flex-end;background:
+      linear-gradient(180deg,rgba(255,255,255,0) 30%,rgba(255,255,255,.95) 75%),
+      radial-gradient(1200px 600px at 50% -10%,rgba(30,75,131,.12),transparent 60%)}
+    .hero-visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.68;filter:saturate(1.05) contrast(1.03)}
+    .hero-copy{position:relative;padding:72px 0}
+    /* imagery */
+    figure{margin:0}
+    .img{border-radius:12px;border:1px solid var(--brand-soft);background:#fff;box-shadow:var(--shadow)}
+    .thumb{position:relative;border-radius:12px;overflow:hidden;border:1px solid var(--brand-soft);background:#fff;box-shadow:var(--shadow)}
+    .thumb img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
+    .thumb:hover img{transform:scale(1.03)}
+    .label{position:absolute;left:10px;bottom:10px;background:rgba(255,255,255,.9);border:1px solid var(--brand-soft);padding:6px 10px;border-radius:999px;font-size:.85rem;color:#1f2c3c}
+    /* sticky quick links */
+    .ribbon{position:sticky;top:56px;z-index:20;background:#f7f9fc;border-bottom:1px solid var(--brand-soft);padding:10px 0}
+    .ribbon .wrap{display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:center}
+    /* footer credit */
+    .credit{opacity:.65;font-size:.85rem}
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="topbar" aria-label="Main">
+    <div class="nav wrap">
+      <a class="brand" href="#top" aria-label="Journey Jewelers Home">Journey Jewelers</a>
+      <nav class="links" aria-label="Primary">
+        <a href="#seo">Local&nbsp;SEO</a>
+        <a href="#custom">Custom</a>
+        <a href="#bridal">Bridal</a>
+        <a href="#repairs">Repairs</a>
+        <a href="#redesign">Redesign</a>
+        <a href="#education">Education</a>
+        <a href="#financing">Financing</a>
+        <a href="#policies">Policies</a>
+        <a href="#cases">Case&nbsp;Studies</a>
+        <a href="#catalog">Catalog</a>
+        <a href="#press">Press</a>
+        <a href="#integrations">Tech</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#care">Care</a>
+        <a href="#faq">FAQ</a>
+        <a href="#consult">Consult</a>
+      </nav>
+      <a class="btn call-btn" href="tel:14057037262">Call (405) 703-7262</a>
+      <div class="burger" id="jj-burger" aria-label="Open menu" aria-controls="jj-mobile" aria-expanded="false"><span></span><span></span><span></span></div>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="jj-mobile" class="mobile-menu" aria-hidden="true">
+      <div class="close" id="jj-close" aria-label="Close menu">×</div>
+      <div class="wrap">
+        <a href="#seo" onclick="JJ.closeMenu()">Local SEO</a>
+        <a href="#custom" onclick="JJ.closeMenu()">Custom Design</a>
+        <a href="#bridal" onclick="JJ.closeMenu()">Engagement & Bridal</a>
+        <a href="#repairs" onclick="JJ.closeMenu()">Repairs & Same-Day Sizing</a>
+        <a href="#redesign" onclick="JJ.closeMenu()">Heirloom Redesign</a>
+        <a href="#education" onclick="JJ.closeMenu()">Education</a>
+        <a href="#financing" onclick="JJ.closeMenu()">Financing & Insurance</a>
+        <a href="#policies" onclick="JJ.closeMenu()">Policies</a>
+        <a href="#cases" onclick="JJ.closeMenu()">Case Studies</a>
+        <a href="#catalog" onclick="JJ.closeMenu()">Showcase</a>
+        <a href="#press" onclick="JJ.closeMenu()">Press</a>
+        <a href="#integrations" onclick="JJ.closeMenu()">Tech</a>
+        <a href="#gallery" onclick="JJ.closeMenu()">Gallery</a>
+        <a href="#care" onclick="JJ.closeMenu()">Care</a>
+        <a href="#faq" onclick="JJ.closeMenu()">FAQ</a>
+        <a href="#consult" onclick="JJ.closeMenu()">Consultation</a>
+        <a class="btn" href="tel:14057037262" style="margin-top:14px">Call (405) 703-7262</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero anchor" id="top">
+    <div class="hero-visual">
+      <img src="https://source.unsplash.com/2000x1200/?macro,diamond,jewelry,white" alt="Luxury diamond macro on white background">
+      <div class="wrap hero-copy">
+        <div class="eyebrow">Master Jeweler • Family-Owned • In-House Craft</div>
+        <h1>Where Rare Beauty Meets Timeless Craft</h1>
+        <p class="sub">Bespoke fine jewelry crafted in-house by our <strong>Master Jeweler</strong>. <a href="#custom">Custom design</a>, <a href="#bridal">engagement & bridal</a>, <a href="#redesign">heirloom redesign</a>, and <a href="#repairs">repairs & same-day ring sizing</a>.</p>
+        <div class="cta-row"><a class="btn" href="#consult">Book a Private Consultation</a><a class="ghost" href="#gallery">View Gallery</a></div>
+        <div class="cta-row"><span class="pill">In-House Repairs</span><span class="pill">Same-Day Ring Sizing*</span><span class="pill">Ethical Sourcing</span></div>
+        <p class="small">*Most cases; metal & complexity dependent.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick SEO chips -->
+  <div class="ribbon">
+    <div class="wrap">
+      <span class="pill">Start with <a href="#custom">Custom Jewelry Design</a></span>
+      <span class="pill">Explore <a href="#bridal">Engagement Rings</a></span>
+      <span class="pill">Need <a href="#repairs">Same-Day Ring Sizing</a>?</span>
+      <span class="pill">Considering <a href="#redesign">Heirloom Redesign</a>?</span>
+      <span class="pill">See <a href="#gallery">Editorial Gallery</a></span>
+    </div>
+  </div>
+
+  <!-- ===== LOCAL SEO ===== -->
+  <section class="anchor" id="seo">
+    <div class="wrap">
+      <h2>Local SEO — Oklahoma City & Surrounding Areas</h2>
+      <p class="sub">This page is structured to rank for high-intent searches: <strong>custom jewelry Oklahoma City</strong>, <strong>engagement rings OKC</strong>, <strong>same-day ring sizing</strong>, and <strong>jewelry repair near me</strong>. Clear headings, internal links, alt text, and schema are already in place.</p>
+      <div class="grid-3" style="margin-top:14px">
+        <div>
+          <h3>Services Clients Search For</h3>
+          <ul>
+            <li><a href="#custom">Custom Jewelry Design in Oklahoma City</a></li>
+            <li><a href="#bridal">Engagement Rings & Bridal Sets</a></li>
+            <li><a href="#repairs">Same-Day Ring Sizing & Repairs</a></li>
+            <li><a href="#redesign">Heirloom Jewelry Redesign</a></li>
+            <li><a href="#materials">Lab-Grown & Natural Diamonds</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Areas We Serve</h3>
+          <p>Oklahoma City • Edmond • Moore • Norman • Yukon • Mustang • Nichols Hills • Del City • Midwest City • Bethany.</p>
+          <p class="small">Internal links reinforce these signals; consistent NAP ensures accuracy across the web.</p>
+        </div>
+        <div>
+          <h3>Technical Signals</h3>
+          <ul>
+            <li>H1–H3 hierarchy + descriptive anchors</li>
+            <li>JSON-LD LocalBusiness + FAQ (embedded below)</li>
+            <li>Fast, mobile-first layout (Core Web Vitals-friendly)</li>
+            <li>Accessible contrast, labels, and alt text</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="anchor" id="values">
+    <div class="wrap">
+      <h2>Crafted With Purpose</h2>
+      <p class="sub">Every detail matters. Every story honored. Every piece built for a lifetime of wear.</p>
+      <div class="grid-3" style="margin-top:16px">
+        <div class="card"><div class="card-body"><h3>Master Craftsmanship</h3><p>Our <strong>Master Jeweler</strong> oversees every prong, setting, and polish for flawless fit and finish.</p></div></div>
+        <div class="card"><div class="card-body"><h3>Heirloom Integrity</h3><p>Museum-grade techniques with platinum and gold purity assurance. <a href="#materials">Learn about materials</a>.</p></div></div>
+        <div class="card"><div class="card-body"><h3>In-House Repairs</h3><p>We never ship your jewelry away. <a href="#repairs">Same-day ring sizing</a> available in many cases.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HERITAGE -->
+  <section class="anchor" id="heritage">
+    <div class="wrap grid-2">
+      <div>
+        <h2>Heritage of Excellence</h2>
+        <p>From apprenticeship to atelier, Journey Jewelers is family-owned and craftsmanship-led. Our studio is built on trust, precision, and service — so your jewelry feels inevitable, like it has always belonged to you.</p>
+        <p class="small">By private appointment • Limited commissions</p>
+      </div>
+      <figure><img class="img" src="https://source.unsplash.com/1200x900/?jewelry,tools,workbench,white" alt="Jeweler’s workbench and tools"></figure>
+    </div>
+  </section>
+
+  <!-- CUSTOM -->
+  <section class="anchor" id="custom">
+    <div class="wrap">
+      <h2>Custom Jewelry Design</h2>
+      <p class="sub">Your story, shaped in precious metal and stone.</p>
+      <div class="grid-2" style="margin-top:16px">
+        <figure><img class="img" src="https://source.unsplash.com/1200x800/?sketch,design,jewelry" alt="Sketches and CAD"></figure>
+        <div>
+          <h3>1 — Vision</h3><p>We explore your inspirations, style, and lifestyle. Bring photos, sketches, or heirloom stones.</p>
+          <h3>2 — Design &amp; Rendering</h3><p>Sketches and CAD show the piece from every angle before production.</p>
+          <h3>3 — Master Craft</h3><p>Hand fabrication, precision setting, and finishing — all performed in-house.</p>
+          <h3>4 — The Reveal</h3><p>Your heirloom, presented with care and built for everyday wear.</p>
+          <div class="cta-row"><a class="btn" href="#consult">Start Your Custom Design</a><a class="ghost" href="#gallery">Browse Gallery</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRIDAL -->
+  <section class="anchor" id="bridal">
+    <div class="wrap">
+      <h2>Engagement & Bridal</h2>
+      <p class="sub">Solitaire to halo, oval to emerald — crafted to your proportions and hand feel.</p>
+      <div class="grid-3" style="margin-top:12px">
+        <div class="thumb"><img src="https://source.unsplash.com/1200x900/?ring,diamond,white" alt="Diamond solitaire ring"><div class="label">Solitaire</div></div>
+        <div class="thumb"><img src="https://source.unsplash.com/1200x900/?ring,engagement,white" alt="Halo engagement ring"><div class="label">Halo</div></div>
+        <div class="thumb"><img src="https://source.unsplash.com/1200x900/?diamond,emerald,ring" alt="Emerald cut ring"><div class="label">Emerald Cut</div></div>
+      </div>
+      <div class="cta-row"><a class="btn" href="#consult">Book a Bridal Consultation</a></div>
+    </div>
+  </section>
+
+  <!-- REPAIRS -->
+  <section class="anchor" id="repairs">
+    <div class="wrap">
+      <h2>Repairs & Same-Day Ring Sizing</h2>
+    <p class="sub">In-house sizing, stone tightening, prong re-tips, soldering, refinishing, and more.</p>
+      <div class="grid-2" style="margin-top:16px">
+        <figure><img class="img" src="https://source.unsplash.com/1200x900/?jeweler,repair,ring" alt="Ring sizing tools"></figure>
+        <div>
+          <h3>What We Do</h3>
+          <ul>
+            <li>Ring sizing (often <strong>same day</strong>)</li>
+            <li>Stone tightening & prong work</li>
+            <li>Chain & clasp repair</li>
+            <li>Polish, re-rhodium, & refinishing</li>
+            <li>Laser welding & precision soldering</li>
+          </ul>
+          <div class="cta-row"><a class="btn" href="#consult">Request a Repair</a><a class="ghost" href="#care">See Jewelry Care Membership</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REDESIGN -->
+  <section class="anchor" id="redesign">
+    <div class="wrap grid-2">
+      <div>
+        <h2>Heirloom Redesign</h2>
+        <p>Transform cherished pieces into modern classics. We preserve their meaning and elevate their beauty.</p>
+        <div class="cta-row"><a class="btn" href="#consult">Discuss a Redesign</a></div>
+      </div>
+      <div class="grid-2">
+        <figure><img class="img" src="https://source.unsplash.com/800x800/?vintage,ring,white" alt="Vintage ring before"></figure>
+        <figure><img class="img" src="https://source.unsplash.com/800x800/?modern,ring,diamond,white" alt="Modern ring after"></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- MATERIALS -->
+  <section class="anchor" id="materials">
+    <div class="wrap">
+      <h2>Materials & Ethics</h2>
+      <div class="grid-3" style="margin-top:12px">
+        <figure><img class="img" alt="Gold and platinum" src="https://source.unsplash.com/1200x900/?gold,ingot,metal,white"></figure>
+        <figure><img class="img" alt="Diamonds" src="https://source.unsplash.com/1200x900/?diamonds,macro,white"></figure>
+        <figure><img class="img" alt="Certification" src="https://source.unsplash.com/1200x900/?certificate,document,white"></figure>
+      </div>
+      <ul>
+        <li>Natural & lab-grown diamonds</li>
+        <li>Certified, conflict-free sourcing</li>
+        <li>Platinum & gold purity assurance</li>
+        <li>Rare gemstone curation on request</li>
+      </ul>
+      <p class="small">Certificates and grading available upon request.</p>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="anchor" id="education">
+    <div class="wrap">
+      <h2>Diamond & Gem Education</h2>
+      <p class="sub">Clarity for confident decisions. Short articles below show how we teach and capture long-tail search.</p>
+      <div class="grid-3" style="margin-top:14px">
+        <div class="card"><div class="card-body"><h3>Diamond Basics: The 4Cs</h3><p>Cut, color, clarity, and carat—how each affects beauty and budget, with examples for solitaires and halos.</p><a class="ghost" href="#consult">Discuss diamonds</a></div></div>
+        <div class="card"><div class="card-body"><h3>Lab-Grown vs Natural</h3><p>Identical sparkle, different origin. Side-by-side comparisons to help you choose what fits your story.</p><a class="ghost" href="#materials">Learn about materials</a></div></div>
+        <div class="card"><div class="card-body"><h3>Ring Settings & Profiles</h3><p>From cathedral to bezel: wearability, security, and style for everyday life.</p><a class="ghost" href="#bridal">Explore engagement styles</a></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINANCING & INSURANCE -->
+  <section class="anchor" id="financing">
+    <div class="wrap">
+      <h2>Financing & Insurance Guidance</h2>
+      <div class="grid-2" style="margin-top:14px">
+        <div>
+          <h3>Financing Options</h3>
+          <ul>
+            <li>Installment plans for engagement & custom work</li>
+            <li>Deposit structure for commissions</li>
+            <li>Pre-approval steps (soft pull where available)</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Jewelry Insurance</h3>
+          <ul>
+            <li>Valuation documentation for coverage</li>
+            <li>Care guidance to keep policies valid</li>
+            <li>Support for claims and repairs</li>
+          </ul>
+        </div>
+      </div>
+      <div class="cta-row"><a class="btn" href="#consult">Ask About Financing</a><a class="ghost" href="#care">See Care Membership</a></div>
+    </div>
+  </section>
+
+  <!-- POLICIES -->
+  <section class="anchor" id="policies">
+    <div class="wrap">
+      <h2>Studio Policies</h2>
+      <div class="grid-3" style="margin-top:14px">
+        <div><h3>Repairs & Warranty</h3><p>Workmanship warranty on in-house repairs and custom settings. Wear-and-tear addressed through our <a href="#care">Care Membership</a>.</p></div>
+        <div><h3>Custom Commissions</h3><p>Approved renderings guide fabrication; timeline transparency; secure stone handling with chain-of-custody.</p></div>
+        <div><h3>Shipping & Appointments</h3><p>Insured shipping available. Private consultations by appointment for design and bridal selections.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASE STUDIES -->
+  <section class="anchor" id="cases">
+    <div class="wrap">
+      <h2>Before & After — Recent Transformations</h2>
+      <div class="grid-3" style="margin-top:12px">
+        <div class="card"><div class="card-body"><h3>Heirloom Oval Reset</h3><p>Vintage oval recut and set in a low-profile platinum solitaire for daily wear. Hidden halo for extra sparkle.</p></div></div>
+        <div class="card"><div class="card-body"><h3>Custom Three-Stone</h3><p>Emerald-cut center with tapered baguettes. Lab-grown option priced, natural sourced on request.</p></div></div>
+        <div class="card"><div class="card-body"><h3>Diamond Band Restoration</h3><p>Micro-prong re-tip and polish; matched a lost stone by mm, color, and clarity; ring returned same day.</p></div></div>
+      </div>
+      <div class="cta-row"><a class="btn" href="#gallery">See the Gallery</a><a class="ghost" href="#consult">Start Your Project</a></div>
+    </div>
+  </section>
+
+  <!-- MINI CATALOG -->
+  <section class="anchor" id="catalog">
+    <div class="wrap">
+      <h2>Showcase — Featured Pieces (Inquiry-First)</h2>
+      <p class="sub">A luxury catalog layout that invites conversation instead of price shopping.</p>
+      <div class="grid-3" style="margin-top:12px">
+        <div class="card"><div class="card-body"><h3>Oval Solitaire in Platinum</h3><p class="small">Low-profile basket • Comfort shank • Hidden halo</p><a class="btn" href="#consult">Inquire</a></div></div>
+        <div class="card"><div class="card-body"><h3>Emerald-Cut Three-Stone</h3><p class="small">Tapered baguettes • Clean shoulders • Classic symmetry</p><a class="btn" href="#consult">Inquire</a></div></div>
+        <div class="card"><div class="card-body"><h3>Pavé Eternity Band</h3><p class="small">Micro-prong • Even sparkle • Daily-wear friendly</p><a class="btn" href="#consult">Inquire</a></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRESS -->
+  <section class="anchor" id="press">
+    <div class="wrap">
+      <h2>Press & Features</h2>
+      <p class="sub">Selected publications and partners that highlight craftsmanship and service.</p>
+      <div class="grid-4" style="margin-top:10px">
+        <span class="pill">Local Bridal Magazine</span>
+        <span class="pill">OKC Lifestyle</span>
+        <span class="pill">Fine Jewelry Digest</span>
+        <span class="pill">Community Awards</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECH / ACCESSIBILITY -->
+  <section class="anchor" id="integrations">
+    <div class="wrap">
+      <h2>Technology, Tracking & Accessibility</h2>
+      <div class="grid-3" style="margin-top:10px">
+        <div><h3>Analytics & Conversion</h3><ul><li>Lead tracking for calls, forms, and clicks</li><li>Attribution-ready structure for ads</li><li>Privacy-conscious data collection</li></ul></div>
+        <div><h3>Integrations</h3><ul><li>Google Business Profile, Maps & Reviews</li><li>CRM/email tools; calendar booking ready</li><li>Chat & SMS lead capture options</li></ul></div>
+        <div><h3>Accessibility & Performance</h3><ul><li>Keyboard-friendly navigation & focus states</li><li>Alt text, descriptive labels, semantic headings</li><li>Lightweight code for fast mobile loading</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="anchor" id="gallery">
+    <div class="wrap">
+      <h2>Editorial Gallery</h2>
+      <div class="grid-3" role="list">
+        <div class="thumb" role="listitem"><img alt="Diamond macro" src="https://source.unsplash.com/1200x900/?diamond,macro,white"></div>
+        <div class="thumb" role="listitem"><img alt="Ring closeup" src="https://source.unsplash.com/1200x900/?ring,closeup,white"></div>
+        <div class="thumb" role="listitem"><img alt="Necklace macro" src="https://source.unsplash.com/1200x900/?necklace,macro,white"></div>
+      </div>
+      <div class="grid-3" role="list" style="margin-top:12px">
+        <div class="thumb" role="listitem"><img alt="Bracelet macro" src="https://source.unsplash.com/1200x900/?bracelet,macro,white"></div>
+        <div class="thumb" role="listitem"><img alt="Earrings macro" src="https://source.unsplash.com/1200x900/?earrings,macro,white"></div>
+        <div class="thumb" role="listitem"><img alt="Jewelry editorial" src="https://source.unsplash.com/1200x900/?jewelry,editorial,white"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="anchor" id="reviews">
+    <div class="wrap">
+      <h2>Client Stories</h2>
+      <div class="grid-2">
+        <blockquote style="border-left:4px solid var(--brand);padding-left:12px;color:#243244">“Same-day sizing and it looks brand new — I’m thrilled.” — <strong>A.M.</strong></blockquote>
+        <blockquote style="border-left:4px solid var(--brand);padding-left:12px;color:#243244">“They reset my heirloom stone perfectly — better than the render.” — <strong>J.R.</strong></blockquote>
+      </div>
+      <p class="small">Hundreds of 5-star reviews praise speed, precision, and care.</p>
+    </div>
+  </section>
+
+  <!-- CARE MEMBERSHIP -->
+  <section class="anchor" id="care">
+    <div class="wrap">
+      <h2>Jewelry Care Membership</h2>
+      <p class="sub">High-end pieces deserve high-end care. Keep your jewelry brilliant, secure, and ready for every moment.</p>
+      <div class="grid-2" style="margin-top:16px">
+        <div class="card"><div class="card-body">
+          <h3>What’s Included</h3>
+          <div class="bullet">Quarterly cleaning & inspection</div>
+          <div class="bullet">Stone tightening & safety check</div>
+          <div class="bullet">Prong evaluation & preventive care</div>
+          <div class="bullet">Polish & light refinishing</div>
+          <div class="bullet">Priority repair booking</div>
+          <div class="bullet">Member-only savings on redesign</div>
+        </div></div>
+        <div class="card"><div class="card-body">
+          <h3>Suggested Price</h3>
+          <p style="font-family:'Playfair Display',serif;font-size:2rem;color:var(--brand)">$249 / year</p>
+          <p class="sub">Add family bundles or ring-only plans as needed.</p>
+          <div class="cta-row"><a class="btn" href="#consult">Join the Membership</a><a class="ghost" href="#repairs">See Repairs & Sizing</a></div>
+          <p class="small">Upgrades: deep refinishing, re-rhodium, and complex stone work quoted separately.</p>
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="anchor" id="faq">
+    <div class="wrap">
+      <h2>Frequently Asked</h2>
+      <details><summary>Can you size rings the same day?</summary><p>Yes. Most ring sizing can be completed <strong>same day</strong>, depending on metal and complexity. <a href="#repairs">Learn more</a>.</p></details>
+      <details><summary>How long does a custom piece take?</summary><p>Typically <strong>4–8 weeks</strong>, based on design and stone sourcing. <a href="#custom">Explore custom design</a>.</p></details>
+      <details><summary>Do you work with heirloom stones?</summary><p>Absolutely — honoring sentimental gems is our specialty. <a href="#redesign">See heirloom redesign</a>.</p></details>
+      <details><summary>Do you offer lab-grown diamonds?</summary><p>Yes — alongside natural stones, all responsibly sourced. <a href="#materials">Materials & ethics</a>.</p></details>
+      <details><summary>Do you ship?</summary><p>Yes — secure, insured shipping is available. Final fitting is recommended in-studio when possible. <a href="#consult">Contact us</a>.</p></details>
+    </div>
+  </section>
+
+  <!-- CONSULTATION -->
+  <section class="anchor" id="consult">
+    <div class="wrap">
+      <h2>Book a Private Consultation</h2>
+      <p>Tell us your vision; we’ll guide materials, design, and timing — in-studio or virtual.</p>
+      <form class="grid-2" onsubmit="event.preventDefault(); alert('Mock only — form not connected.');">
+        <label>Full Name <input name="name" type="text" placeholder="Your Name" required></label>
+        <label>Email <input name="email" type="email" placeholder="you@example.com" required></label>
+        <label>Phone (optional) <input name="phone" type="tel" placeholder="+1 (___) ___-____"></label>
+        <label>Interest
+          <select name="interest" required>
+            <option>Custom Design</option>
+            <option>Engagement & Bridal</option>
+            <option>Repairs & Same-Day Sizing</option>
+            <option>Heirloom Redesign</option>
+            <option>Jewelry Care Membership</option>
+            <option>Education / Policy Question</option>
+          </select>
+        </label>
+        <label>Notes / Inspiration <textarea name="notes" rows="4" placeholder="Tell us about your piece, timeline, or inspiration…"></textarea></label>
+        <div class="cta-row"><button class="btn" type="submit">Request Consultation</button><a class="ghost" href="tel:14057037262" aria-label="Call Journey Jewelers">(405) 703-7262</a></div>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="anchor" id="footer">
+    <div class="wrap" style="border-top:1px solid var(--brand-soft);padding:26px 0 28px">
+      <p><strong>Journey Jewelers</strong> — Private consultations by appointment</p>
+      <p class="small">Custom Design • Engagement & Bridal • Repairs & Same-Day Sizing • Heirloom Redesign</p>
+      <p class="small">Call <a href="tel:14057037262">(405) 703-7262</a></p>
+      <p class="small credit">Website by <a href="#" rel="nofollow">TCG Digital</a></p>
+    </div>
+  </footer>
+
+  <!-- Smooth anchors & Mobile menu -->
+  <script>
+    (function(){
+      var links=document.querySelectorAll('a[href^="#"]');
+      links.forEach(function(a){
+        a.addEventListener('click',function(e){
+          var id=a.getAttribute('href'); if(id && id.length>1){
+            var el=document.querySelector(id); if(el){e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'});}
+          }
+        });
+      });
+    })();
+    var JJ={mm:document.getElementById('jj-mobile'),burger:document.getElementById('jj-burger'),closeX:document.getElementById('jj-close'),
+      openMenu:function(){this.mm.classList.add('open');this.mm.setAttribute('aria-hidden','false');this.burger.setAttribute('aria-expanded','true');},
+      closeMenu:function(){this.mm.classList.remove('open');this.mm.setAttribute('aria-hidden','true');this.burger.setAttribute('aria-expanded','false');}};
+    document.getElementById('jj-burger').addEventListener('click',function(){JJ.openMenu();});
+    document.getElementById('jj-close').addEventListener('click',function(){JJ.closeMenu();});
+    window.JJ=JJ;
+  </script>
+
+  <!-- JSON-LD Schema -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"JewelryStore","name":"Journey Jewelers","telephone":"+14057037262","url":"#","priceRange":"$$$",
+   "sameAs":["#gallery","#custom","#repairs","#bridal"]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Can you size rings the same day?","acceptedAnswer":{"@type":"Answer","text":"Yes. Most ring sizing can be completed same day, depending on metal and complexity."}},
+    {"@type":"Question","name":"How long does a custom piece take?","acceptedAnswer":{"@type":"Answer","text":"Typically 4–8 weeks, based on design and stone sourcing."}},
+    {"@type":"Question","name":"Do you work with heirloom stones?","acceptedAnswer":{"@type":"Answer","text":"Absolutely — honoring sentimental gems is our specialty. We can redesign settings to modernize while preserving the story."}},
+    {"@type":"Question","name":"Do you offer lab-grown diamonds?","acceptedAnswer":{"@type":"Answer","text":"Yes — alongside natural stones, all responsibly sourced."}},
+    {"@type":"Question","name":"Do you ship?","acceptedAnswer":{"@type":"Answer","text":"Yes — secure, insured shipping is available. Final fitting is recommended in-studio when possible."}}
+  ]}
+  </script>
+</body>
+</html>
